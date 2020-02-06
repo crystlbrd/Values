@@ -9,5 +9,10 @@
             "email": "crystlbrd@bitkov.de"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "\\crystlbrd\\Values\\": "src/"
+        }
+    }
 }
