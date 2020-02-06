@@ -29,7 +29,7 @@ class StringValue
 
             return $string;
         } else {
-            throw new InvalidArgumentException('length has to be greater than 0!');
+            throw new InvalidArgumentException('length has to be greater or equal than 0!');
         }
     }
 }
