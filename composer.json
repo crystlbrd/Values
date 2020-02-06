@@ -1,0 +1,13 @@
+{
+    "name": "crystlbrd/values",
+    "description": "A PHP library of functions for generating and manupilating values.\u001b[D",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emanuel Bitkov",
+            "email": "crystlbrd@bitkov.de"
+        }
+    ],
+    "require": {}
+}
