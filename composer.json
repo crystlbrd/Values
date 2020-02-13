@@ -1,6 +1,6 @@
 {
     "name": "crystlbrd/values",
-    "description": "A PHP library of functions for generating and manupilating values.\u001b[D",
+    "description": "A PHP library of functions for generating and manipulating values.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,12 +9,20 @@
             "email": "crystlbrd@bitkov.de"
         }
     ],
-    "require": {
-        "php": ">=7.0"
-    },
     "autoload": {
         "psr-4": {
             "\\crystlbrd\\Values\\": "src/"
         }
+    },
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "\\crystlbrd\\Values\\Tests\\": "test/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.0.0"
     }
 }
