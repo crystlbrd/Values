@@ -22,7 +22,7 @@ class StringValue
     {
         $string = '';
 
-        if ($length <= 0) {
+        if ($length >= 0) {
             for ($i = 0; $i < $length; $i++) {
                 $string .= substr($pool, NumberValue::random(strlen($pool) - 1), 1);
             }
