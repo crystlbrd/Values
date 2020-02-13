@@ -16,6 +16,5 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-  test:
     - name: Run test suite
       run: composer run-script test
