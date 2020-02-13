@@ -8,6 +8,10 @@ use crystlbrd\Values\Exceptions\UnsupportedFeatureException;
 use crystlbrd\Values\NumberValue;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test the Number value
+ * @package crystlbrd\Values\Tests\Units
+ */
 class NumberTest extends TestCase
 {
     /**
