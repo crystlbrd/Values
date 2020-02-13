@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "\\crystlbrd\\Values\\": "src/"
+            "crystlbrd\\Values\\": "src/"
         }
     },
     "require": {
@@ -19,7 +19,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "\\crystlbrd\\Values\\Tests\\": "test/"
+            "crystlbrd\\Values\\Tests\\": "test/"
         }
     },
     "require-dev": {
