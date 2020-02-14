@@ -19,7 +19,7 @@ class StringValue
      * @throws InvalidArgumentException
      * @throws Exceptions\UnsupportedFeatureException
      */
-    static function random(string $pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', int $length = 16): string
+    public static function random(string $pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', int $length = 16): string
     {
         $string = '';
 
