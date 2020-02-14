@@ -1,2 +1,2 @@
 # Values
-PHP library of functions for generating and manupilating values.
+PHP library of functions for generating and manipulating values.
