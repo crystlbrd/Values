@@ -33,4 +33,27 @@ class StringValue
             throw new InvalidArgumentException('length has to be greater or equal than 0!');
         }
     }
+
+    /**
+     * Generates a random hex string
+     * @param int $length length of the string
+     * @param bool $useUpperCase use upper letter or lower ones
+     * @return string hex string
+     * @throws Exceptions\UnsupportedFeatureException
+     * @throws InvalidArgumentException
+     */
+    public static function randomHex(int $length = 6, bool $useUpperCase = false): string
+    {
+        // upper or lower case?
+        if ($useUpperCase) {
+            $pool = 'ABCDEF';
+        } else {
+            $pool = 'abcdef';
+        }
+
+        $pool .= '0123456789';
+
+        // generate string
+        return self::random($pool, $length);
+    }
 }
