@@ -17,6 +17,7 @@ class StringValue
      * @param int $length length of output string
      * @return string random string
      * @throws InvalidArgumentException
+     * @throws Exceptions\UnsupportedFeatureException
      */
     static function random(string $pool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', int $length = 16): string
     {
