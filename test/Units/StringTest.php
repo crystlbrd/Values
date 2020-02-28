@@ -6,8 +6,8 @@ namespace crystlbrd\Values\Tests\Units;
 
 use crystlbrd\Values\Exceptions\InvalidArgumentException;
 use crystlbrd\Values\Exceptions\UnsupportedFeatureException;
-use crystlbrd\Values\NumberValue;
-use crystlbrd\Values\StringValue;
+use crystlbrd\Values\NumVal;
+use crystlbrd\Values\StrVal;
 use PHPUnit\Framework\TestCase;
 
 class StringTest extends TestCase
@@ -44,7 +44,7 @@ class StringTest extends TestCase
         foreach ($datasets as $dataset) {
             for ($i = 0; $i < $iterations; $i++) {
                 // Generate random string
-                $string = StringValue::random($dataset['pool'], $dataset['length']);
+                $string = StrVal::random($dataset['pool'], $dataset['length']);
 
                 // Validate type
                 self::assertIsString($string);
@@ -63,7 +63,7 @@ class StringTest extends TestCase
     public function testInvalidCallingOfRandom()
     {
         $this->expectException(InvalidArgumentException::class);
-        StringValue::random('abc', -1);
+        StrVal::random('abc', -1);
     }
 
     /**
@@ -85,10 +85,10 @@ class StringTest extends TestCase
             /// Lower case
 
             // get a random length
-            $length = NumberValue::random(32);
+            $length = NumVal::random(32);
 
             // generate a random string
-            $string = StringValue::randomHex($length);
+            $string = StrVal::randomHex($length);
 
             // validate
             self::assertIsString($string);
@@ -98,10 +98,10 @@ class StringTest extends TestCase
             /// Upper case
 
             // get a random length
-            $length = NumberValue::random(32);
+            $length = NumVal::random(32);
 
             // generate a random string
-            $string = StringValue::randomHex($length, true);
+            $string = StrVal::randomHex($length, true);
 
             // validate
             self::assertIsString($string);
@@ -117,6 +117,6 @@ class StringTest extends TestCase
     public function testInvalidCallingOfRandomHex()
     {
         $this->expectException(InvalidArgumentException::class);
-        StringValue::randomHex(-1);
+        StrVal::randomHex(-1);
     }
 }

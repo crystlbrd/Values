@@ -10,7 +10,7 @@ use Exception;
  * Hosts all number related functions
  * @package crystlbrd\Values
  */
-class NumberValue
+class NumVal
 {
     /**
      * Returns a random number between min and max

@@ -9,7 +9,7 @@ use crystlbrd\Values\Exceptions\InvalidArgumentException;
  * Hosts all string related functions
  * @package crystlbrd\Values
  */
-class StringValue
+class StrVal
 {
     /**
      * Returns a random string
@@ -25,7 +25,7 @@ class StringValue
 
         if ($length >= 0) {
             for ($i = 0; $i < $length; $i++) {
-                $string .= substr($pool, NumberValue::random(strlen($pool) - 1), 1);
+                $string .= substr($pool, NumVal::random(strlen($pool) - 1), 1);
             }
 
             return $string;
