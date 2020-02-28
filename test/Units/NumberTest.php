@@ -5,7 +5,7 @@ namespace crystlbrd\Values\Tests\Units;
 
 
 use crystlbrd\Values\Exceptions\UnsupportedFeatureException;
-use crystlbrd\Values\NumberValue;
+use crystlbrd\Values\NumVal;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -38,7 +38,7 @@ class NumberTest extends TestCase
         // Test only with max border
         for ($i = 0; $i < $iterations; $i++) {
             // Generate a random number
-            $number = NumberValue::random($maxBorder);
+            $number = NumVal::random($maxBorder);
 
             // test type
             self::assertIsInt($number);
@@ -53,7 +53,7 @@ class NumberTest extends TestCase
         // Test with max and min border
         for ($i = 0; $i < $iterations; $i++) {
             // Generate a random number
-            $number = NumberValue::random($maxBorder, $minBorder);
+            $number = NumVal::random($maxBorder, $minBorder);
 
             // test type
             self::assertIsInt($number);
@@ -69,7 +69,7 @@ class NumberTest extends TestCase
         for ($i = 0; $i < $iterations; $i++) {
             // Generate a random number
             self::expectException(UnsupportedFeatureException::class);
-            $number = NumberValue::random($maxBorder, $minBorder, 5);
+            $number = NumVal::random($maxBorder, $minBorder, 5);
 
             # TODO: As soon as implemented
         }
