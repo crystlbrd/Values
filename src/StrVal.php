@@ -56,4 +56,51 @@ class StrVal
         // generate string
         return self::random($pool, $length);
     }
+
+    public static function urlSanitize(string $str, array $filter = []): string
+    {
+        // lower
+        $str = mb_strtolower($str);
+
+        // remove whitespace before and at the end
+        $str = trim($str);
+
+        // replace special characters
+        if (empty($filter)) {
+            $filter = [
+                'ä' => 'ae',
+                'ö' => 'oe',
+                'ü' => 'ue',
+                'ß' => 'ss',
+                '€' => 'euro',
+                '$' => 'dollar',
+                ' ' => '-',
+                '.' => '-',
+                ':' => '',
+                ';' => '',
+                ',' => '',
+                '?' => '',
+                '&'  => '',
+                '!' => '',
+                ')' => '',
+                '(' => '',
+                '/' => '-',
+                '"' => '',
+                '%' => ''
+            ];
+        }
+
+        $str = str_replace(array_keys($filter), array_values($filter), $str);
+
+        // remove any other invalid characters
+        $str = filter_var($str, FILTER_SANITIZE_URL);
+
+        // remove double minuses
+        $str = preg_replace('/(-){2,}/', '-', $str);
+
+        // remove minuses at the end and beginning of the string
+        $str = preg_replace('/^-+|-+$/', '', $str);
+
+        return $str;
+    }
 }
