@@ -10,6 +10,21 @@ namespace crystlbrd\Values;
 class ArrVal
 {
     /**
+     * Checks, if any key in needle is in haystack
+     * @param array $needle keys to look for
+     * @param array $haystack array to search in
+     * @return bool
+     */
+    public static function arrayInArray(array $needle, array $haystack):bool
+    {
+        foreach ($needle as $n) {
+            if (in_array($n, $haystack)) return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Checks, if an array is numeric (all keys are integers)
      * @param array $arr Array to check
      * @return bool
