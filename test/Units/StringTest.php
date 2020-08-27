@@ -148,7 +148,7 @@ class StringTest extends TestCase
         ];
 
         foreach ($datasets as $in =>  $out) {
-            self::assertSame($out, StrVal::urlSanitze($in));
+            self::assertSame($out, StrVal::urlSanitize($in));
         }
     }
 }
